@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>siang jam · bringing back memories, one song at a time</title>
+<meta name="description" content="Siang Jam provides music-based intervention for elders to slow cognitive decline and lower the risk of Alzheimer's and dementia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Palette trimmed to four: cream, ink, yellow, soft pink (+ tints of them). */
+:root{
+  --bg:#FBF0DE; --surface:#FFF8EA; --ink:#221C14; --soft:#594C3E;
+  --yellow:#F7C510; --yellow-tint:#FCE9A6; --pink:#F9C6D9; --pink-deep:#EFA9C3;
+  --display:"Fredoka",system-ui,sans-serif; --body:"Nunito Sans",system-ui,sans-serif; --hand:"Caveat","Comic Sans MS",cursive;
+  --wrap:1160px; --nav-h:76px; --radius:24px;
+  --torn-a:polygon(0.0% 0.38%,4.2% 0.17%,8.3% 0.63%,12.5% 0.25%,16.7% 0.11%,20.8% 0.64%,25.0% 1.47%,29.2% 1.28%,33.3% 1.22%,37.5% 0.36%,41.7% 0.86%,45.8% 0.44%,50.0% 0.28%,54.2% 0.17%,58.3% 0.34%,62.5% 1.48%,66.7% 1.33%,70.8% 1.29%,75.0% 1.28%,79.2% 0.31%,83.3% 0.50%,87.5% 1.00%,91.7% 1.17%,95.8% 1.37%,100.0% 1.41%,99.86% 4.2%,99.03% 8.3%,98.93% 12.5%,99.19% 16.7%,99.72% 20.8%,99.24% 25.0%,99.86% 29.2%,98.50% 33.3%,98.62% 37.5%,99.12% 41.7%,99.52% 45.8%,98.55% 50.0%,99.08% 54.2%,98.59% 58.3%,98.64% 62.5%,99.19% 66.7%,99.34% 70.8%,99.04% 75.0%,99.31% 79.2%,99.74% 83.3%,99.51% 87.5%,98.70% 91.7%,99.93% 95.8%,100.0% 99.93%,95.8% 99.00%,91.7% 99.55%,87.5% 99.14%,83.3% 99.25%,79.2% 99.45%,75.0% 98.40%,70.8% 99.69%,66.7% 99.34%,62.5% 99.68%,58.3% 98.99%,54.2% 99.56%,50.0% 99.43%,45.8% 98.80%,41.7% 99.49%,37.5% 99.11%,33.3% 98.55%,29.2% 99.84%,25.0% 99.90%,20.8% 99.63%,16.7% 98.78%,12.5% 99.02%,8.3% 99.62%,4.2% 99.47%,0.0% 99.72%,0.73% 95.8%,0.07% 91.7%,1.12% 87.5%,1.43% 83.3%,1.53% 79.2%,1.18% 75.0%,1.54% 70.8%,0.03% 66.7%,0.46% 62.5%,1.55% 58.3%,1.24% 54.2%,0.66% 50.0%,1.51% 45.8%,0.99% 41.7%,1.31% 37.5%,0.47% 33.3%,0.31% 29.2%,0.71% 25.0%,0.22% 20.8%,0.61% 16.7%,1.54% 12.5%,0.53% 8.3%,0.02% 4.2%);
+  --torn-b:polygon(0.0% 1.02%,4.2% 0.82%,8.3% 0.30%,12.5% 1.91%,16.7% 0.01%,20.8% 1.11%,25.0% 1.98%,29.2% 0.18%,33.3% 1.22%,37.5% 1.36%,41.7% 0.09%,45.8% 0.83%,50.0% 1.55%,54.2% 0.99%,58.3% 1.60%,62.5% 0.35%,66.7% 0.52%,70.8% 0.24%,75.0% 1.11%,79.2% 2.03%,83.3% 1.30%,87.5% 1.70%,91.7% 0.84%,95.8% 1.64%,100.0% 0.22%,99.36% 4.2%,98.52% 8.3%,98.40% 12.5%,99.07% 16.7%,99.81% 20.8%,99.41% 25.0%,99.54% 29.2%,99.38% 33.3%,98.22% 37.5%,99.56% 41.7%,98.05% 45.8%,98.07% 50.0%,99.88% 54.2%,99.17% 58.3%,98.92% 62.5%,99.95% 66.7%,99.07% 70.8%,98.01% 75.0%,99.75% 79.2%,98.69% 83.3%,99.73% 87.5%,98.73% 91.7%,98.03% 95.8%,100.0% 99.55%,95.8% 99.98%,91.7% 99.82%,87.5% 98.81%,83.3% 99.96%,79.2% 99.81%,75.0% 98.91%,70.8% 97.97%,66.7% 99.08%,62.5% 99.12%,58.3% 98.59%,54.2% 99.79%,50.0% 98.72%,45.8% 99.62%,41.7% 98.66%,37.5% 97.89%,33.3% 99.88%,29.2% 98.78%,25.0% 98.67%,20.8% 99.67%,16.7% 99.41%,12.5% 97.81%,8.3% 97.80%,4.2% 99.73%,0.0% 98.45%,2.09% 95.8%,0.52% 91.7%,1.34% 87.5%,0.09% 83.3%,0.81% 79.2%,1.48% 75.0%,1.30% 70.8%,1.70% 66.7%,0.19% 62.5%,0.76% 58.3%,1.90% 54.2%,1.29% 50.0%,0.99% 45.8%,0.88% 41.7%,2.17% 37.5%,1.26% 33.3%,0.04% 29.2%,1.76% 25.0%,0.72% 20.8%,0.95% 16.7%,0.47% 12.5%,0.98% 8.3%,0.71% 4.2%);
+  --torn-c:polygon(0.0% 0.68%,4.2% 1.05%,8.3% 1.25%,12.5% 0.38%,16.7% 1.00%,20.8% 0.92%,25.0% 0.86%,29.2% 0.14%,33.3% 0.04%,37.5% 0.50%,41.7% 0.97%,45.8% 0.33%,50.0% 0.65%,54.2% 0.41%,58.3% 1.10%,62.5% 1.23%,66.7% 0.52%,70.8% 1.30%,75.0% 0.08%,79.2% 1.06%,83.3% 1.14%,87.5% 0.20%,91.7% 0.92%,95.8% 0.73%,100.0% 1.24%,99.73% 4.2%,99.30% 8.3%,98.85% 12.5%,99.17% 16.7%,99.60% 20.8%,99.89% 25.0%,98.78% 29.2%,99.38% 33.3%,98.70% 37.5%,99.82% 41.7%,98.94% 45.8%,98.94% 50.0%,98.80% 54.2%,99.98% 58.3%,99.52% 62.5%,99.93% 66.7%,99.02% 70.8%,99.54% 75.0%,98.75% 79.2%,99.51% 83.3%,98.99% 87.5%,98.87% 91.7%,99.69% 95.8%,100.0% 99.28%,95.8% 98.76%,91.7% 99.32%,87.5% 99.53%,83.3% 99.65%,79.2% 98.98%,75.0% 99.75%,70.8% 99.21%,66.7% 99.28%,62.5% 99.28%,58.3% 99.83%,54.2% 99.14%,50.0% 98.81%,45.8% 99.59%,41.7% 99.57%,37.5% 98.82%,33.3% 99.25%,29.2% 99.65%,25.0% 99.99%,20.8% 99.02%,16.7% 99.55%,12.5% 99.39%,8.3% 99.65%,4.2% 99.18%,0.0% 99.05%,0.40% 95.8%,0.10% 91.7%,1.28% 87.5%,1.18% 83.3%,0.03% 79.2%,0.73% 75.0%,0.89% 70.8%,0.52% 66.7%,0.95% 62.5%,1.25% 58.3%,0.77% 54.2%,0.51% 50.0%,0.25% 45.8%,0.33% 41.7%,0.20% 37.5%,0.14% 33.3%,0.28% 29.2%,1.09% 25.0%,0.70% 20.8%,1.05% 16.7%,1.20% 12.5%,1.05% 8.3%,0.06% 4.2%);
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(var(--nav-h) + 32px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.skip{position:fixed;left:16px;top:-80px;z-index:100;padding:10px 18px;background:var(--yellow);border-radius:10px;font-weight:800;text-decoration:none}
+.skip:focus{top:16px}
+
+/* buttons: chunky with a solid bottom edge, like the reference */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 26px;border:0;border-radius:12px;font:600 18px/1 var(--display);text-decoration:none;cursor:pointer;
+  transition:transform .15s ease-out,box-shadow .15s ease-out}
+.btn-dark{background:var(--ink);color:var(--surface);box-shadow:0 4px 0 #6b5d4a}
+.btn-light{background:var(--surface);color:var(--ink);box-shadow:0 4px 0 rgba(34,28,20,.18)}
+.btn-yellow{background:var(--yellow);color:var(--ink);box-shadow:0 4px 0 #C99C00}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark:hover{box-shadow:0 6px 0 #6b5d4a}.btn-light:hover{box-shadow:0 6px 0 rgba(34,28,20,.18)}.btn-yellow:hover{box-shadow:0 6px 0 #C99C00}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(34,28,20,.3)}
+
+/* decorative bits from the binder kit */
+.clip{position:absolute;z-index:3;background:center/contain no-repeat;pointer-events:none}
+.tape{position:absolute;z-index:3;width:120px;height:32px;background:linear-gradient(180deg,rgba(247,238,210,.9),rgba(232,217,178,.9));
+  clip-path:polygon(2% 0,98% 0,96% 25%,99% 50%,97% 75%,100% 100%,1% 100%,4% 70%,0 45%,3% 20%);pointer-events:none}
+.doodle{position:absolute;overflow:visible;pointer-events:none}
+.doodle path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* paper mat: a torn sheet of binder paper tucked behind a photo */
+.mat{position:absolute;z-index:-1;background:center/cover;clip-path:var(--torn-a);pointer-events:none}
+.mat-grid{background-image:linear-gradient(rgba(255,248,234,.25),rgba(255,248,234,.25)),url(assets/texture-grid-clean.jpg)}
+.mat-stars{background-image:url(assets/texture-grid-stars.jpg)}
+.mat-pink{background-image:url(assets/texture-crumpled-pink.jpg);clip-path:var(--torn-b)}
+.mat-lined{background-image:url(assets/texture-lined-left.jpg);clip-path:var(--torn-c)}
+.mat-crumpled{background-image:url(assets/texture-grid-crumpled.jpg);clip-path:var(--torn-b)}
+.matted{position:relative;isolation:isolate}
+
+/* ---------- navigation: floating bar, fixed while scrolling, sliding active marker ---------- */
+.nav{position:fixed;left:0;right:0;top:16px;z-index:50;padding:0 24px}
+.nav-bar{position:relative;display:flex;align-items:center;justify-content:space-between;max-width:var(--wrap);height:var(--nav-h);margin:0 auto;padding:0 14px 0 24px;
+  background:var(--surface);border-radius:20px;border:1.5px solid rgba(34,28,20,.12)}
+.logo{display:flex;align-items:center;gap:12px;font:700 30px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.logo-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--yellow)}
+.nav-links{display:flex;align-items:center;gap:6px;list-style:none;margin:0;padding:0}
+.nav-links a{position:relative;display:flex;align-items:center;height:var(--nav-h);padding:0 14px;font:600 18px/1 var(--display);text-decoration:none;color:var(--soft);transition:color .15s}
+.nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--ink)}
+.nav-links .btn{height:auto;min-height:48px;margin-left:12px;padding:0 22px;color:var(--ink)}
+.nav-marker{position:absolute;bottom:0;left:0;height:4px;width:0;border-radius:4px 4px 0 0;background:var(--yellow);transition:transform .35s cubic-bezier(.3,.7,.3,1),width .35s cubic-bezier(.3,.7,.3,1),opacity .2s;opacity:0}
+.nav-toggle{display:none;width:48px;height:48px;border:0;border-radius:12px;background:var(--yellow-tint);cursor:pointer}
+.nav-toggle span{display:block;width:22px;height:2.5px;margin:4px auto;border-radius:2px;background:var(--ink);transition:transform .2s,opacity .2s}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* ---------- landing ---------- */
+.hero{position:relative;padding:250px 0 150px;text-align:center}
+.hero-in{position:relative;z-index:2;max-width:860px;margin:0 auto}
+.hero h1{font-size:clamp(50px,7.6vw,104px);line-height:1}
+.hero .title{position:relative;isolation:isolate}
+.hero h1 em{font-style:normal}
+@property --r{syntax:"<length>";inherits:false;initial-value:0px}
+@keyframes ripple{to{--r:720px}}
+@media (prefers-reduced-motion:no-preference){
+  .halftone{--r:0px;-webkit-mask:radial-gradient(circle at 50% 53%,#000 var(--r),transparent calc(var(--r) + 70px));mask:radial-gradient(circle at 50% 53%,#000 var(--r),transparent calc(var(--r) + 70px));
+    animation:ripple 1.8s cubic-bezier(.25,.6,.3,1) .25s both}
+}
+.ht{position:absolute;z-index:-1;height:auto;max-width:none;pointer-events:none}
+.hero,.story,.help,.connect{isolation:isolate}
+.halftone{position:absolute;left:50%;top:50%;z-index:-1;width:min(760px,130%);max-width:none;transform:translate(-50%,-53%);pointer-events:none}
+.hero p{max-width:640px;margin:clamp(96px,10vw,150px) auto 0;font-size:21px;line-height:1.6;color:var(--ink)}
+.hero .ctas{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:38px}
+.blob{position:relative;overflow:hidden;border-radius:58% 42% 47% 53% / 49% 56% 44% 51%}
+.blob img{width:100%;height:100%;object-fit:cover}
+.hero-photo-wrap{position:absolute;left:-70px;top:400px;width:380px;height:360px}
+.hero-photo{width:100%;height:100%}
+.hero-photo-wrap .mat{inset:-26px -34px -30px 40px;transform:rotate(-7deg)}
+.hero-photo img{object-position:46% 40%}
+.hero-photo-wrap .clip{left:166px;top:-40px;width:62px;height:76px;background-image:url(assets/clip-round-yellow-dots.png);transform:rotate(-8deg)}
+.hero-poster{position:absolute;right:-30px;top:180px;width:300px;transform:rotate(6deg)}
+.hero-poster img{border-radius:4px}
+.hero-poster .mat{inset:-30px -40px -26px -34px;transform:rotate(-10deg)}
+.hero-poster .tape{left:90px;top:-14px;transform:rotate(-4deg)}
+.hero .doodle path{stroke:var(--yellow);stroke-width:5}
+
+/* ---------- our story ---------- */
+.story{position:relative;padding:40px 0 140px}
+.story-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:56px;align-items:start}
+.letter{--pl:96px;--pr:56px;--rule:34px;position:relative;isolation:isolate;padding:56px var(--pr) 64px var(--pl)}
+/* The sheet itself sits behind the text so only the paper gets roughened, never the words:
+   grain + a faint aged tint toward the edges, then the #paper-edge filter makes the outline
+   uneven and fibrous with a thin darker rim, the way real paper edges catch the light. */
+.letter .sheet{position:absolute;inset:0;z-index:-1;border-radius:7px 4px 6px 9px;filter:url(#paper-edge);
+  background:
+    radial-gradient(ellipse 75% 70% at 50% 45%,transparent 55%,rgba(196,158,96,.10) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .36 0 0 0 0 .22 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    #FFF9EC}
+.letter::before{content:"";position:absolute;z-index:1;top:6px;bottom:6px;left:calc(var(--pl) - 26px);width:2px;background:var(--pink-deep)}
+.letter::after{content:"";position:absolute;top:0;bottom:0;left:calc(var(--pl) / 2 - 24px);width:24px;
+  background:radial-gradient(circle,var(--bg) 0 10px,rgba(34,28,20,.18) 10.5px 11.5px,transparent 12px) 0 14%/24px 24px no-repeat,
+             radial-gradient(circle,var(--bg) 0 10px,rgba(34,28,20,.18) 10.5px 11.5px,transparent 12px) 0 50%/24px 24px no-repeat,
+             radial-gradient(circle,var(--bg) 0 10px,rgba(34,28,20,.18) 10.5px 11.5px,transparent 12px) 0 86%/24px 24px no-repeat}
+.letter h2{font-size:clamp(34px,4vw,48px)}
+.letter-body{margin:var(--rule) calc(8px - var(--pr)) 0 calc(8px - var(--pl));padding:0 calc(var(--pr) - 8px) 0 calc(var(--pl) - 8px);
+  background:repeating-linear-gradient(transparent 0 calc(var(--rule) - 1px),rgba(34,28,20,.13) calc(var(--rule) - 1px) var(--rule))}
+.letter-body p{line-height:var(--rule)}
+.letter-body p+p{margin-top:var(--rule)}
+.letter .opening{font-size:20px;font-weight:700}
+.letter .sign{font:700 42px/calc(var(--rule) * 2) var(--hand)}
+.letter .sign small{display:block;font:600 17px/var(--rule) var(--body);color:var(--soft)}
+.story-side{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:34px 26px;padding-top:18px}
+.snap{position:relative;margin:0}
+.snap .mat{inset:-16px -16px -14px -16px}
+.snap img{width:100%;object-fit:cover;border-radius:3px;border:6px solid #fff}
+.snap-wide{grid-column:1/-1}
+.snap-wide img{aspect-ratio:16/10}
+.snap-tall img{aspect-ratio:3/4}
+.snap-duet{transform:rotate(-2deg)}
+.snap-dance{transform:rotate(2.5deg);margin-top:8px}
+.snap-lunch{transform:rotate(-3deg)}
+.snap-elders{width:88%;justify-self:end;transform:rotate(1.8deg)}
+.snap-duet .tape{left:50%;margin-left:-60px;top:-22px;transform:rotate(3deg)}
+.snap-elders .clip{left:50%;top:-44px;width:56px;height:70px;margin-left:-28px;background-image:url(assets/clip-binder-silver.png)}
+
+/* ---------- how you can help ---------- */
+.help{position:relative;border-radius:32px;background:var(--pink);overflow:hidden}
+.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:80px 72px}
+.help-art{position:relative}
+.help-art .blob{aspect-ratio:1/1;border-radius:46% 54% 52% 48% / 54% 46% 54% 46%}
+.help-art .blob img{object-position:38% 50%}
+.help-art .ring{position:absolute;inset:-26px -30px -20px -24px;width:calc(100% + 54px);height:calc(100% + 46px)}
+.help-art .ring path{stroke:var(--ink);stroke-width:2.5;opacity:.7}
+.help-art .mat{inset:-34px -40px -38px -30px;transform:rotate(-5deg)}
+.help-art .clip{right:42px;top:-30px;width:58px;height:70px;background-image:url(assets/clip-round-pink.png);transform:rotate(10deg)}
+.help h2{font-size:clamp(36px,4.4vw,56px)}
+.help-txt p{margin-top:20px;font-size:20px}
+.help-txt .btn{margin-top:32px}
+
+/* ---------- connect ---------- */
+.connect{position:relative;padding:150px 0 140px;text-align:center;overflow:hidden}
+.connect h2{font-size:clamp(36px,4.4vw,56px)}
+.connect .intro{max-width:640px;margin:22px auto 0;font-size:20px;color:var(--soft)}
+.posts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px;max-width:1000px;margin:64px auto 0}
+.post{position:relative;display:flex;justify-content:center}
+.post:nth-child(1){transform:rotate(-1deg)}.post:nth-child(2){transform:rotate(1deg)}
+.post .tape{left:50%;margin-left:-60px;top:-15px;transform:rotate(-3deg)}
+.post .instagram-media{margin:0!important;min-width:0!important}
+.connect .follow{margin-top:56px}
+
+/* ---------- footer ---------- */
+.ft{background:var(--ink);color:var(--surface);border-radius:36px 36px 0 0;padding:64px 0 32px}
+.ft-top{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.ft .logo{font-size:36px}
+.ft .logo-mark{width:52px;height:52px}
+.ft-tag{margin-top:12px;font:700 28px/1 var(--hand);color:var(--yellow)}
+.ft nav ul{display:flex;flex-wrap:wrap;gap:6px 30px;list-style:none;margin:0;padding:0}
+.ft nav a{display:inline-flex;align-items:center;min-height:44px;font:600 19px/1 var(--display);text-decoration:none}
+.ft nav a:hover{text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:6px}
+.ft-legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,248,234,.2);font-size:16px;color:rgba(255,248,234,.7)}
+.ft-legal a{text-underline-offset:4px}
+
+/* ---------- scroll reveals: a short rise + fade, once per element ----------
+   Hidden states only exist under .motion-ok, which JS sets when motion is allowed,
+   so nothing is ever hidden without JS or with reduced motion. `translate` is used
+   (not transform) so the photos keep their tilt. */
+.motion-ok .reveal{opacity:0;translate:0 22px;transition:opacity .8s cubic-bezier(.2,.65,.3,1) var(--d,0s),translate .9s cubic-bezier(.2,.65,.3,1) var(--d,0s)}
+.motion-ok .reveal.fade-only{translate:none;transition:opacity 1.4s ease var(--d,0s)}
+.motion-ok .reveal.is-in{opacity:1;translate:0 0}
+
+/* ---------- responsive ---------- */
+@media (max-width:1180px){
+  .hero{padding-bottom:80px}
+  .hero-photo-wrap,.hero-poster{position:relative;left:auto;right:auto;top:auto}
+  .hero-photos{display:flex;justify-content:center;align-items:center;gap:40px;margin-top:70px}
+  .hero-photo-wrap{width:340px;height:300px}
+  .hero-photo-wrap .clip{left:140px;top:-34px}
+  .hero-poster{width:240px}
+}
+@media (max-width:900px){
+  .nav-toggle{display:block}
+  .nav-links{position:absolute;left:0;right:0;top:calc(100% + 10px);flex-direction:column;align-items:stretch;gap:0;padding:10px;border-radius:20px;background:var(--surface);border:1.5px solid rgba(34,28,20,.14);
+    visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s}
+  .nav.open .nav-links{visibility:visible;opacity:1;transform:none}
+  .nav-links a{height:54px;padding:0 16px;border-radius:12px}
+  .nav-links a[aria-current="true"]{background:var(--yellow-tint)}
+  .nav-links .btn{margin:8px 0 4px}
+  .nav-marker{display:none}
+  .story-grid,.help-grid{grid-template-columns:1fr}
+  .story-side{max-width:460px;margin:0 auto;padding-top:20px}
+  .help-grid{padding:64px 32px;gap:48px}
+  .help-art{max-width:400px;margin:0 auto;width:100%}
+  .posts{grid-template-columns:minmax(0,540px);justify-content:center}
+}
+@media (max-width:640px){
+  :root{--nav-h:64px}
+  body{font-size:17px}
+  .wrap{padding:0 16px}
+  .nav{top:10px;padding:0 12px}
+  .nav-bar{padding:0 8px 0 16px}
+  .logo{font-size:26px}.logo-mark{width:40px;height:40px}
+  .hero{padding:200px 0 64px}
+  .hero .doodle,.ht-sm-hide{display:none}
+  .ht{transform:scale(.7)}
+  .hero p{font-size:18px}
+  .hero-photos{flex-direction:column;gap:56px}
+  .hero-photo-wrap{width:290px;height:260px}
+  .hero-poster{width:220px}
+  .letter{--pl:58px;--pr:22px;padding-top:40px;padding-bottom:44px}
+  .help{border-radius:24px}
+  .help-grid{padding:52px 22px}
+  .connect{padding:110px 0 100px}
+  .ft{border-radius:28px 28px 0 0}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="paper-edge" x="-3%" y="-3%" width="106%" height="106%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".011 .016" numOctaves="3" seed="4" result="wave"/>
+    <feDisplacementMap in="SourceGraphic" in2="wave" scale="13" xChannelSelector="R" yChannelSelector="G" result="bent"/>
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="11" result="fibre"/>
+    <feDisplacementMap in="bent" in2="fibre" scale="3.5" xChannelSelector="R" yChannelSelector="G" result="paper"/>
+    <feMorphology in="paper" operator="erode" radius="1.3" result="inner"/>
+    <feComposite in="paper" in2="inner" operator="out" result="rim"/>
+    <feFlood flood-color="#A88A5C" flood-opacity=".45"/>
+    <feComposite in2="rim" operator="in" result="rimTint"/>
+    <feMerge><feMergeNode in="paper"/><feMergeNode in="rimTint"/></feMerge>
+  </filter>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <nav class="nav-bar" aria-label="Main">
+    <a class="logo" href="#home" aria-label="siang jam, back to top">
+      <span class="logo-mark" aria-hidden="true"><svg width="24" height="26" viewBox="0 0 42 46"><path fill="#221C14" d="M12 33 c-4.5 0-7.5 2.6-7.5 5.4s3 4.4 6.4 4.1 6.6-2.8 6.6-5.6V14 L36 9 V29.5 c-1.6-1-3.5-1.4-5.5-1.1 -4.1.6-7 3.3-6.7 6.1s3.6 4.5 7.2 3.9 6.4-3.3 6.4-6V3.8 L15.4 9.6 V33.6 C14.4 33.2 13.3 33 12 33Z"/></svg></span>
+      siang jam
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" data-spy="home">Home</a></li>
+      <li><a href="#story" data-spy="story">Our story</a></li>
+      <li><a href="#connect" data-spy="connect">Connect</a></li>
+      <li><a class="btn btn-yellow" href="#volunteer" data-spy="volunteer">Volunteer</a></li>
+    </ul>
+    <span class="nav-marker" aria-hidden="true"></span>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- LANDING -->
+<section class="hero" id="home" aria-labelledby="home-h">
+  <img class="ht" src="assets/halftone-oval.svg" alt="" width="520" height="360" style="left:-150px;bottom:-40px;width:440px">
+  <img class="ht ht-sm-hide" src="assets/halftone-star.svg" alt="" width="360" height="360" style="right:6%;bottom:30px;width:210px;transform:rotate(12deg)">
+  <svg class="doodle" viewBox="0 0 50 50" style="left:6%;top:120px;width:120px;transform:rotate(-14deg)" aria-hidden="true"><path d="M25 3 C26.5 9 28 14 30 18.5 C36 18.6 41 18.8 46 19.6 C42 23 38 26.5 34 29.6 C35.6 35 37 40 38.4 45.6 C33.6 42.6 29 39.6 24.8 36.8 C20.4 39.8 15.8 42.6 11 45.4 C12.6 40 14.2 35 15.8 29.6 C11.8 26.4 7.8 23.2 4 19.8 C9 19 14 18.6 19.8 18.4 C21.6 13.6 23.2 8.4 25 3 Z" style="stroke-width:2.2"/></svg>
+  <svg class="doodle" viewBox="0 0 42 46" style="right:24%;bottom:70px;width:70px;transform:rotate(12deg)" aria-hidden="true"><path d="M12 33 c-4.5 0-7.5 2.6-7.5 5.4s3 4.4 6.4 4.1 6.6-2.8 6.6-5.6V14 L36 9 V29.5 c-1.6-1-3.5-1.4-5.5-1.1 -4.1.6-7 3.3-6.7 6.1s3.6 4.5 7.2 3.9 6.4-3.3 6.4-6V3.8 L15.4 9.6 V33.6 C14.4 33.2 13.3 33 12 33Z" style="stroke-width:2"/></svg>
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="title">
+        <img class="halftone" src="assets/halftone-heart.svg" alt="" width="640" height="580">
+        <h1 id="home-h">Bringing back memories, <em>one song</em> at a&nbsp;time.</h1>
+      </div>
+      <p>This is the heart of Siang Jam. Our mission is to provide music-based intervention for elders to slow cognitive decline and lower the risk of neurological diseases such as Alzheimer’s and dementia.</p>
+      <div class="ctas">
+        <a class="btn btn-dark" href="#volunteer">Volunteer with us</a>
+        <a class="btn btn-light" href="#story">Read our story</a>
+      </div>
+    </div>
+    <div class="hero-photos">
+      <div class="hero-photo-wrap matted">
+        <span class="mat mat-pink" aria-hidden="true"></span>
+        <div class="blob hero-photo"><img src="assets/photo-singing.jpg" alt="An elder sings into a microphone while young volunteers stand behind her, smiling." width="1400" height="650"></div>
+        <span class="clip" aria-hidden="true"></span>
+      </div>
+      <div class="hero-poster matted">
+        <span class="mat mat-grid" aria-hidden="true"></span>
+        <span class="tape" aria-hidden="true"></span>
+        <img src="assets/poster.jpg" alt="Siang Jam poster: “Introducing the sound of remembering”, with an illustrated grandmother at a piano." width="900" height="1127">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="story" id="story" aria-labelledby="story-h">
+  <img class="ht" src="assets/halftone-blob.svg" alt="" width="420" height="420" style="right:-120px;top:-40px;width:480px">
+  <div class="wrap story-grid">
+    <article class="letter">
+      <span class="sheet" aria-hidden="true"></span>
+      <h2 id="story-h">A message from Meht</h2>
+      <div class="letter-body">
+      <p class="opening">Months ago, my grandmother forgot my name, but she could still remember all the songs I played on the piano. Somehow, it had helped her access words and memories that seemed lost.</p>
+      <p>Alzheimer’s damages the brain in stages. First to go are names and recent events, but the last to go is often musical memory. People with Alzheimer’s are shown to react emotionally to music and learn new songs long after they stop reliably identifying faces.</p>
+      <p>Combined with the uplifting effects, I realized how powerfully music could positively impact my grandmother, so I started playing to her consistently. Soon, she’d become more present than she’d been in months.</p>
+      <p>Siang Jam was created so other elders can have that same care. Bringing back memories, one song at a time.</p>
+      <p class="sign">Meht<small>Co-founder</small></p>
+      </div>
+    </article>
+    <div class="story-side">
+      <figure class="snap snap-wide snap-duet matted">
+        <span class="mat mat-grid" aria-hidden="true"></span>
+        <span class="tape" aria-hidden="true"></span>
+        <img src="assets/photo-duet.jpg" alt="Two volunteers perform for residents, one on keyboard and one singing into a microphone." width="1200" height="675" loading="lazy">
+      </figure>
+      <figure class="snap snap-tall snap-dance matted">
+        <span class="mat mat-pink" aria-hidden="true"></span>
+        <img src="assets/photo-dancing.jpg" alt="Volunteers sing while elders stand and dance along in a covered hall." width="900" height="1200" loading="lazy">
+      </figure>
+      <figure class="snap snap-tall snap-lunch matted">
+        <span class="mat mat-lined" aria-hidden="true"></span>
+        <img src="assets/photo-lunch.jpg" alt="A volunteer chats with elders at a lunch table while one of them holds a microphone." width="900" height="1200" loading="lazy">
+      </figure>
+      <figure class="snap snap-wide snap-elders matted">
+        <span class="mat mat-stars" aria-hidden="true"></span>
+        <span class="clip" aria-hidden="true"></span>
+        <img src="assets/photo-elders.jpg" alt="A welcome banner showing a group of elders in pink and purple shirts with their hands pressed together in greeting." width="958" height="667" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- HOW YOU CAN HELP -->
+<section class="wrap" id="volunteer" aria-labelledby="help-h">
+  <div class="help">
+    <img class="ht ht-sm-hide" src="assets/halftone-star.svg" alt="" width="360" height="360" style="right:-70px;bottom:-90px;width:330px;transform:rotate(-8deg)">
+    <div class="help-grid">
+      <div class="help-art matted">
+        <span class="mat mat-crumpled" aria-hidden="true"></span>
+        <div class="blob"><img src="assets/photo-keyboard.jpg" alt="A volunteer's hands on a keyboard while an elder sings along beside them." width="1400" height="638" loading="lazy"></div>
+        <svg class="doodle ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M52 4 C80 3 98 24 96 52 C94 80 72 98 46 96 C18 94 2 74 4 47 C6 22 26 6 56 7 C74 8 88 16 93 28"/></svg>
+        <span class="clip" aria-hidden="true"></span>
+      </div>
+      <div class="help-txt">
+        <h2 id="help-h">How you can help</h2>
+        <p>Signup is open to everyone, regardless of musical background. Even a small contribution makes a difference.</p>
+        <!-- TODO: replace href with the volunteer Google Form link -->
+        <a class="btn btn-dark" href="#volunteer" id="volunteer-form">Sign up to volunteer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect" id="connect" aria-labelledby="connect-h">
+  <img class="ht ht-sm-hide" src="assets/halftone-oval.svg" alt="" width="520" height="360" style="left:-170px;top:90px;width:520px;transform:rotate(-14deg)">
+  <img class="ht ht-sm-hide" src="assets/halftone-blob.svg" alt="" width="420" height="420" style="right:-130px;bottom:120px;width:400px">
+  <div class="wrap">
+    <h2 id="connect-h">Caring for an elder yourself?</h2>
+    <p class="intro">Follow us for regular posts on ways to improve the physical, emotional and cognitive health of the elders around you.</p>
+    <div class="posts">
+      <div class="post">
+        <span class="tape" aria-hidden="true"></span>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DcyfFehTDza/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DcyfFehTDza/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF;line-height:0;padding:0 0;text-align:center;text-decoration:none;width:100%;" target="_blank" rel="noopener">View this post on Instagram</a><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;line-height:17px;margin-bottom:0;margin-top:8px;overflow:hidden;padding:8px 0 7px;text-align:center;text-overflow:ellipsis;white-space:nowrap;"><a href="https://www.instagram.com/p/DcyfFehTDza/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;" target="_blank" rel="noopener">A post shared by @siangjam.th</a></p></div></blockquote>
+      </div>
+      <div class="post">
+        <span class="tape" aria-hidden="true"></span>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/Dc5yxJJEzgm/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/Dc5yxJJEzgm/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF;line-height:0;padding:0 0;text-align:center;text-decoration:none;width:100%;" target="_blank" rel="noopener">View this post on Instagram</a><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;line-height:17px;margin-bottom:0;margin-top:8px;overflow:hidden;padding:8px 0 7px;text-align:center;text-overflow:ellipsis;white-space:nowrap;"><a href="https://www.instagram.com/p/Dc5yxJJEzgm/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;" target="_blank" rel="noopener">A post shared by @siangjam.th</a></p></div></blockquote>
+      </div>
+    </div>
+    <a class="btn btn-dark follow" href="https://www.instagram.com/siangjam.th/" target="_blank" rel="noopener">Follow @siangjam.th</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <div>
+        <a class="logo" href="#home" aria-label="siang jam, back to top">
+          <span class="logo-mark" aria-hidden="true"><svg width="28" height="30" viewBox="0 0 42 46"><path fill="#221C14" d="M12 33 c-4.5 0-7.5 2.6-7.5 5.4s3 4.4 6.4 4.1 6.6-2.8 6.6-5.6V14 L36 9 V29.5 c-1.6-1-3.5-1.4-5.5-1.1 -4.1.6-7 3.3-6.7 6.1s3.6 4.5 7.2 3.9 6.4-3.3 6.4-6V3.8 L15.4 9.6 V33.6 C14.4 33.2 13.3 33 12 33Z"/></svg></span>
+          siang jam
+        </a>
+        <p class="ft-tag">the sound of remembering</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#story">Our story</a></li>
+          <li><a href="#volunteer">Volunteer</a></li>
+          <li><a href="#connect">Connect</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="ft-legal">
+      <span>© 2026 Siang Jam</span>
+      <a href="https://www.instagram.com/siangjam.th/" target="_blank" rel="noopener">Instagram @siangjam.th</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var toggle=nav.querySelector('.nav-toggle');
+  var marker=nav.querySelector('.nav-marker');
+  var links=[].slice.call(nav.querySelectorAll('[data-spy]'));
+  var bar=nav.querySelector('.nav-bar');
+
+  // Slide the marker under whichever link is current (the Volunteer button just darkens instead).
+  function setActive(id){
+    links.forEach(function(a){
+      if(a.dataset.spy===id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');
+    });
+    var a=links.filter(function(l){return l.dataset.spy===id})[0];
+    if(!a||a.classList.contains('btn')){marker.style.opacity=0;return}
+    var r=a.getBoundingClientRect(),b=bar.getBoundingClientRect();
+    marker.style.width=r.width+'px';
+    marker.style.transform='translateX('+(r.left-b.left)+'px)';
+    marker.style.opacity=1;
+  }
+
+  // Scroll-spy: the section crossing the middle band of the viewport is "current".
+  var current='home';
+  var sections=links.map(function(a){return document.getElementById(a.dataset.spy)});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){current=e.target.id;setActive(current)}});
+    },{rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(s){io.observe(s)});
+  }
+  setActive(current);
+  window.addEventListener('resize',function(){setActive(current)});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setActive(current)});
+
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>8)},{passive:true});
+
+  // Mobile menu
+  function close(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}
+  toggle.addEventListener('click',function(){
+    var open=!nav.classList.contains('open');
+    nav.classList.toggle('open',open);toggle.setAttribute('aria-expanded',String(open));
+  });
+  links.forEach(function(a){a.addEventListener('click',close)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){close();toggle.focus()}});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target))close()});
+
+  // Scroll reveals (skipped entirely when the visitor prefers reduced motion)
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(!reduce.matches&&'IntersectionObserver' in window){
+    document.documentElement.classList.add('motion-ok');
+    var groups=[['.letter'],['.snap',90],['.help-art'],['.help-txt',0,120],['.connect h2'],['.connect .intro',0,100],['.post',140]];
+    var els=[];
+    groups.forEach(function(g){
+      [].slice.call(document.querySelectorAll(g[0])).forEach(function(el,i){
+        el.classList.add('reveal');
+        el.style.setProperty('--d',((g[2]||0)+i*(g[1]||0))/1000+'s');
+        els.push(el);
+      });
+    });
+    [].slice.call(document.querySelectorAll('main .ht')).forEach(function(el){el.classList.add('reveal','fade-only');els.push(el)});
+    var ro=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');ro.unobserve(e.target)}});
+    },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+    els.forEach(function(el){ro.observe(el)});
+    // If the OS setting flips to reduce mid-visit, show everything immediately
+    reduce.addEventListener('change',function(m){if(m.matches){document.documentElement.classList.remove('motion-ok')}});
+  }
+})();
+</script>
+<script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html>
